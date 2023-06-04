@@ -3,7 +3,7 @@
 //But generatepassword method thats within the write password method is not defined so we need to create a function for what happens when the red button is clicked. 
 
 
-//Arrays
+//Arrays used for random password generation
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -27,32 +27,33 @@ console.log(keys.symChoice);
 // Assignment Code - Starter Code
 var generateBtn = document.querySelector("#generate");   //This is the red generate button
 
-// Add event listener to generate button - Starter Code
+// Add event listener to generate button - Starter Code. Upon click action, writePassword function is read.
 generateBtn.addEventListener("click", writePassword);
 
 //Need to set up a function for generatePassword due to console message stating undefined.
 function generatePassword() {
-  console.log("validating that the code is getting till here");
-  passwordlength = parseInt(prompt("Enter Number of Characters: "));
+  //console.log("validating that the code is getting till here");
+  passwordlength = parseInt(prompt("Please Enter the desired length for Password below: "));
   var choices = []
 
+  //if either of the 2 scenariors are true, an alert is displayed.
   if (passwordlength < 8 || passwordlength > 128) {
-    alert("Password length should be between 8 and 128");
+    alert("The entered password length is not within boundary. The length should be atleast 8 characters and no more than 128 characters");
     return;  //stops the funtion
-  } else if (!passwordlength) {
+  } else if (!passwordlength) { //if nothing is entered in the password length field
     alert("Enter a password length");
     return;
-  } else {
-    var includeUppercase = window.confirm("Include Upper Case?");
-    var includeLowerCase = window.confirm("Include Lower Case?");
-    var includeNumber = window.confirm("Include  Number?");
-    var includeSymbol = window.confirm("Include Symbols?");
+  } else { //if correct length is entered, the below options to pick from are displayed
+    var includeUppercase = window.confirm("Include Upper Case characters in random password?");
+    var includeLowerCase = window.confirm("Include Lower Case characters in random passwor?");
+    var includeNumber = window.confirm("Include Numbers in random passwor?");
+    var includeSymbol = window.confirm("Include Symbols in random passwor?");
 
 
-    //scenarios of choosing from confirms
+    //scenarios based on selections
 
     if (!includeUppercase && !includeLowerCase && !includeNumber && !includeSymbol) {
-      choices = alert("Please chose a password criteria!");
+      choices = alert("Please select atleast 1 password criteria!");
       return;
     }
     if (includeLowerCase) {
@@ -68,6 +69,7 @@ function generatePassword() {
       choices = choices.concat(symbol)
     }
 
+    //Another way of doing the same as line 55-69
     /*else if (includeUppercase && includeLowerCase && includeNumber && includeSymbol) {
      choices = upperCase.concat(lowerCase, numbers, symbol);
    } else if (includeUppercase && includeLowerCase && includeNumber) {
@@ -100,20 +102,21 @@ function generatePassword() {
      choices = symbol;
    } */
     console.log(choices)
-    var password = passwordFunction(choices)
-    return password;
+    var finalpassword = passwordFunction(choices)
+    return finalpassword;
   }
 }
+//Randomizing of password based on selection
 function passwordFunction(choices) {
-  console.log("Arriving to the passwordFunction section");
-  var password = "";
+ // console.log("Arriving to the passwordFunction section");
+  var choicesPassword = "";
 
   for (var i = 0; i < passwordlength; i++) {
     var pickPassword = choices[Math.floor(Math.random() * choices.length)];
-    password += pickPassword // password = password + pickPassword
+    choicesPassword += pickPassword // password = password + pickPassword
     console.log(pickPassword);
   }
-  return password
+  return choicesPassword
 }
 
 //the clicking of the generate button triggers this write password functions and its sub functions to run
