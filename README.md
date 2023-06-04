@@ -4,7 +4,7 @@
     The web application named Password Generator is an application that is used to generate random passwords. As an employee with access to sensitive data, the provided starter code was fixed so that the application creates strong passwords that provides greater security. 
 
 
-## Website's Live URL - 
+## Website's Live URL - https://angelinrajan.github.io/Angelin_randomPasswordGenerator/
 
 ## Functionality added to the starter code-
 1. When the Red generate button is clicked, user is presented with a prompt to enter a password length
@@ -30,7 +30,8 @@
 9. The progress and the live website's url is displayed within the Actions tab
 10. Clicking on the live website's link navigates user to the live website which is deployed without errors (See screenshot below)
 
-    ![Live Website's Screenshot](assets/Image/_C__Users_angel_bootcamp_Challenge_Angelin_week2-Challenge_index.html.png)
+   ![Live Website's Screenshot](Assets/Live%20Website's%20Screenshot.png)
+
 
 
 ## Outside source reference-
