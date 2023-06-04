@@ -1,7 +1,9 @@
 # Angelin's Random password Generator
 
 ## Website Overview
-    The web application named Password Generator is an application that is used to generate random passwords. As an employee with access to sensitive data, the provided starter code was fixed so that the application creates strong passwords that provides greater security. 
+    The web application named Password Generator is an application that is used to generate random passwords. 
+    As an employee with access to sensitive data, the provided starter code was fixed so that the application 
+    creates strong passwords that provides greater security. 
 
 
 ## Website's Live URL - https://angelinrajan.github.io/Angelin_randomPasswordGenerator/
@@ -42,4 +44,5 @@
     4. Sample password generator examples: https://www.tutorialstonight.com/password-generator-in-javascript
     5. To learn about return to interrupt a function: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
     6. Study session with Jacob, Lucas, and Edward
-    7. Tutoring session to bypass the undefined error and link between the generate function and passwordFunction. Tutor name- Sangeetha.
+    7. Tutoring session to bypass the undefined error and link between the generate function and passwordFunction. 
+    Tutor name- Sangeetha.
